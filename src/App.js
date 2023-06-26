@@ -1,17 +1,21 @@
-import React from "react";
-import Header from "./components/Header";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import Event from "./pages/Event";
 import Navbar from "./components/Navbar";
-import Container from "./components/Container";
-import "./App.css";
-
-const App = () => {
+import Header from "./components/Header";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
+export default function App() {
   return (
-    <>
+    <BrowserRouter>
       <Header />
       <Navbar />
-      <Container />
-    </>
+      <Routes>
+        <Route path="Home" element={<Home />} />
+        <Route path="Event" element={<Event />} />
+        <Route path="Login" element={<Login />} />
+        <Route path="Register" element={<Register />} />
+      </Routes>
+    </BrowserRouter>
   );
-};
-
-export default App;
+}

@@ -1,10 +1,10 @@
 import React from "react";
-import "./../App.css";
+import "../css/App.css";
 const Navbar = () => {
   return (
-    <header className="navbar">
+    <header class="navbar">
       <nav>
-        <ul className="nav_links">
+        <ul class="nav_links">
           <li>
             <a href="#">Théâtre</a>
           </li>

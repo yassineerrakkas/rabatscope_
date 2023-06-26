@@ -1,17 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap");
 @font-face {
   font-family: "Netflix Sans Bold";
-  src: url("./font/Netflix Sans Bold.otf");
+  src: url("../font/Netflix Sans Bold.otf");
 }
 
 @font-face {
   font-family: "Netflix Sans Medium";
-  src: url("./font/Netflix Sans Medium.otf");
+  src: url("../font/Netflix Sans Medium.otf");
 }
 
 @font-face {
   font-family: "Netflix Sans Light";
-  src: url("./font/Netflix Sans Light.otf");
+  src: url("../font/Netflix Sans Light.otf");
 }
 
 * {
@@ -23,12 +23,18 @@
 body {
   min-height: 100vh;
   background-image: linear-gradient(rgba(65, 65, 65, 0.5), rgb(32, 32, 32)),
-    url(./images/backgroundimg3.jpg);
+    url(../images/backgroundimg3.jpg);
   background-size: cover;
   background-position: center;
   height: auto;
   background-repeat: no-repeat;
   background-color: rgb(32, 32, 32);
+  background-attachment: fixed;
+}
+footer {
+  width: 100%;
+  height: auto;
+  background: linear-gradient(rgba(255, 0, 0, 0), rgb(0, 0, 0));
 }
 
 li,
@@ -45,7 +51,7 @@ button,
 
 .header {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   width: 85%;
   margin: 1rem auto;
@@ -86,13 +92,15 @@ button,
 }
 
 button {
+  width: 7rem;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
   padding: 0.563rem 1.563rem;
   border: none;
   border-radius: 50px;
   cursor: pointer;
   transition: all 0.3s ease 0s;
 }
-
 .login {
   border: 0.1rem;
   border-color: rgb(177, 6, 15);
@@ -132,8 +140,9 @@ button:hover {
 .agenda {
   display: flex;
   height: 18rem;
-  background-color: rgb(177, 6, 15);
+  background: linear-gradient(rgb(177, 6, 15), rgba(0, 0, 0, 0.5));
   border-radius: 10px;
+  box-shadow: 0 0 25px -1px rgba(0, 0, 0, 0.486);
   padding: 0.2rem;
   flex-direction: column;
   align-items: center;
@@ -259,11 +268,6 @@ button:hover {
   color: #dbdbdb;
   width: 20rem;
 }
-/* .main-event-header,
-.agenda-header {
-  font-family: "Netflix Sans Bold";
-  color: whitesmoke;
-} */
 .headflex {
   display: flex;
   flex-wrap: wrap;
@@ -284,7 +288,7 @@ button:hover {
 
 .mevent {
   display: flex;
-  gap: 1.3rem;
+  gap: 1rem;
   width: 45rem;
   height: 18rem;
   align-items: center;
@@ -295,6 +299,7 @@ button:hover {
   border-radius: 10px;
   box-shadow: 0 0 25px -1px rgba(0, 0, 0, 0.486);
   flex-grow: 1;
+  transition: all 0.3s ease 0s;
 }
 
 .piece {
@@ -307,7 +312,14 @@ button:hover {
   align-items: center;
   padding: 0 1rem;
   box-shadow: 0 0 25px -1px rgba(0, 0, 0, 0.486);
+  transition: all 0.3s ease 0s;
 }
+.piece:hover,
+.mevent:hover {
+  background-color: #000000d3;
+  height: 19rem;
+}
+
 .event-caption {
   display: flex;
   flex-direction: column;
@@ -336,4 +348,57 @@ button:hover {
 .fr {
   font-size: 1.3rem;
   font-weight: 1000;
+}
+.parteners {
+  display: flex;
+  justify-content: space-around;
+}
+.parteners .nav_links {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 2rem;
+}
+@media (max-width: 860px) {
+  .container {
+    width: 90%;
+  }
+  .mevent {
+    width: 100%;
+    flex-direction: column-reverse;
+    height: auto;
+  }
+  .main-event-affiche img {
+    width: 100%;
+  }
+  .piece {
+    flex-direction: column;
+    height: auto;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+  .main_event_text_container {
+    width: 100%;
+  }
+  .theater-title {
+    width: 100%;
+    font-size: 1.4rem;
+  }
+  .theater-description {
+    width: 100%;
+    height: auto;
+  }
+  .nav_links {
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+  li img {
+    width: 100%;
+  }
+  .piece:hover,
+  .mevent:hover {
+    background-color: #000000d3;
+    height: auto;
+  }
 }

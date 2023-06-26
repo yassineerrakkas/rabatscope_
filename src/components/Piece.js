@@ -1,8 +1,9 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Piece = ({ title, discription, poster, date, time, band }) => {
   return (
-    <div class="piece">
+    <Link to="/Event" class="piece">
       <div class="piece-affiche">
         <img src={poster} alt="poster" />
       </div>
@@ -36,7 +37,7 @@ const Piece = ({ title, discription, poster, date, time, band }) => {
         <br />
         <p class="event-discription">{discription}</p>
       </div>
-    </div>
+    </Link>
   );
 };
 
